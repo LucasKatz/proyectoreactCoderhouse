@@ -1,0 +1,46 @@
+/*BARRA DE NAVEGACIÓN*/
+nav {
+    font-size: larger;
+  }
+  
+  nav .logo {
+    margin-right: 50px;
+  }
+  
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  
+  nav li {
+    display: inline;
+    font-size: larger;
+    margin: 4px;
+  }
+  
+  nav .boton {
+    width: 180px;
+    text-align: center;
+    font-size: x-large;
+    background-color: #b17f48;
+    color: #56381f;
+    font-family: "Indie Flower", cursive;
+    font-weight: bolder;
+    text-decoration: none;
+    background-image: -webkit-gradient(linear, left top, right top, from(yellow), to(brown));
+    background-image: linear-gradient(to right, yellow, brown);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 4px;
+  }
+  
+  nav .boton:hover, nav a:focus {
+    background-size: 100% 6px;
+    -webkit-transition: background-size 1s;
+    transition: background-size 1s;
+  }
