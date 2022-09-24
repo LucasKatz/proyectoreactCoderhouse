@@ -2,10 +2,8 @@
 nav {
     font-size: larger;
     align-items: center;
-  }
-  
-  nav .logo {
-    margin-right: 50px;
+    background-color: rgb(50, 50,50);
+    color: aliceblue;
   }
   
   nav ul {
