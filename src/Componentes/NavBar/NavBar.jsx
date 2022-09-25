@@ -1,26 +1,26 @@
-import './NavBar.css'
+import '../NavBar/NavBar.css'
 import logo from  "../NavBar/logo.svg.png"
 import CartWidget from '../CartWidget/CartiWidget'
 
 
 const NavBAr = () => {
     return (
-        <nav className="navbar navbar-expand-lg bg-light">
-        <div className="container-fluid">
+        <nav className="navbar navbar-expand-lg">
+        <div className="navbar container-fluid ">
           <img src={logo} />
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <div className="m-auto" id="navbarNav">
             <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Inicio</a>
+              <li>
+                <a className="item" aria-current="page" href="#">Inicio</a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Novedades</a>
+              <li >
+                <a className="item" href="#">Novedades</a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Catalogo</a>
+              <li>
+                <a className="item" href="#">Catalogo</a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link disabled">Contacto</a>
+              <li>
+                <a className="item">Contacto</a>
               </li>
               <li className="cart">
               <a href="">

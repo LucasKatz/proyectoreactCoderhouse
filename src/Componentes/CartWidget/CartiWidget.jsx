@@ -6,6 +6,7 @@ export default function CartWidget() {
       <div className="container-widget">
         <div className="widget">
           <img src={Carrito} alt="" />
+          <span>0</span>
         </div>
       </div>
     );
