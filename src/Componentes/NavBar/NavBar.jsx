@@ -22,13 +22,11 @@ const NavBAr = () => {
               <li>
                 <a id="item">Contacto</a>
               </li>
-              <li className="cart">
-              <a>
-                <CartWidget />
-              </a>
-            </li>
             </ul>
           </div>
+          <a>
+            <CartWidget />
+          </a>
         </div>
       </nav>
     )
