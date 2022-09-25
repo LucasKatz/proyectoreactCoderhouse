@@ -9,13 +9,10 @@
     height: 60px;
 }
 
-.contador {
-    width: 100%;
-
+#carrito {
+    align-self: flex-end;
 }
 
-.contador p {
-    position: absolute;
-    right: 67px;
-    top: 26px;
+#contador {
+    color: aliceblue;
 }

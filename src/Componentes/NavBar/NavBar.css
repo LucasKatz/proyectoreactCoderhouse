@@ -5,25 +5,16 @@
     background-color: rgb(50, 50,50);
   }
 
-a {
+#item {
   color: aliceblue;
-  margin: auto;
+  margin:10px
 }
   
-  nav ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
+
   
   nav li {
     display: inline;
     font-size: larger;
-    margin: 4px;
     align-self: center;
     align-items: center;
   }

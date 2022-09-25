@@ -11,19 +11,19 @@ const NavBAr = () => {
           <div className="m-auto" id="navbarNav">
             <ul className="navbar-nav">
               <li>
-                <a className="item" aria-current="page" href="#">Inicio</a>
+                <a id="item" aria-current="page">Inicio</a>
               </li>
               <li >
-                <a className="item" href="#">Novedades</a>
+                <a id="item">Novedades</a>
               </li>
               <li>
-                <a className="item" href="#">Catalogo</a>
+                <a id="item">Catalogo</a>
               </li>
               <li>
-                <a className="item">Contacto</a>
+                <a id="item">Contacto</a>
               </li>
               <li className="cart">
-              <a href="">
+              <a>
                 <CartWidget />
               </a>
             </li>
