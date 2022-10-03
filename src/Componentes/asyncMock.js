@@ -4,7 +4,7 @@ const products =  [
         name: 'Adel', 
         price: 1000, 
         category: 'lampara', 
-        img:'', 
+        img:'../public/images/Adel', 
         stock: 25, 
         description:'---'
     },
