@@ -4,7 +4,7 @@ const products =  [
         name: 'Adel', 
         price: 1000, 
         category: 'lampara', 
-        img:'../public/images/Adel', 
+        img:'/Images/Adel.JPG' , 
         stock: 25, 
         description:'---'
     },
@@ -13,7 +13,7 @@ const products =  [
         name: 'Berilo', 
         price: 800, 
         category: 'lampara', 
-        img:'', 
+        img:'/Images/berilo.JPG', 
         stock: 16, 
         description:'---'
     },
@@ -22,7 +22,7 @@ const products =  [
         name: 'Double Sh', 
         price: 1200, 
         category: 'lampara', 
-        img:'', 
+        img:'/Images/doublesh.JPG', 
         stock: 10, 
         description:'---'
 },
@@ -30,8 +30,8 @@ const products =  [
         id: '4', 
         name: 'Lampara Hat', 
         price: 1200, 
-        category: 'tablet', 
-        img:'', 
+        category: 'lampara', 
+        img:'/Images/hatlamp.JPG', 
         stock: 10, 
         description:'---'
 },
@@ -39,8 +39,8 @@ const products =  [
         id: '5', 
         name: 'Lampara Tokio', 
         price: 1200, 
-        category: 'tablet', 
-        img:'', 
+        category: 'lampara', 
+        img:'/Images/tokio.webp', 
         stock: 10, 
         description:'---'
 },
@@ -48,8 +48,8 @@ const products =  [
         id: '6', 
         name: 'Lampara Tuel', 
         price: 1200, 
-        category: 'tablet', 
-        img:'', 
+        category: 'lampara', 
+        img:'/Images/tuel.JPG', 
         stock: 10, 
         description:'---'
 }
