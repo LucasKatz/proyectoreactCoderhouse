@@ -7,20 +7,16 @@ const ItemDetailContainer =() => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        getProductById('2').then(response => {
+        getProductById("2").then(response => {
             setProducts(response)
         }).finally(() => {
             setLoading(false)
         })
     }, [])
 
-    if(loading) {
-        return <h1>Loading...</h1>
-    }
-
     return  (
         <div>
-            <ItemDetail products={products}/>
+            <ItemDetail key= {products.id} {... products}/>
         </div>
     )
 }
