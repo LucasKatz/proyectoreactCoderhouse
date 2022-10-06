@@ -4,6 +4,7 @@ import NavBar from './Componentes/NavBar/NavBar'
 import Saludo from './Componentes/ItemListContainer/ItemListContainer'
 import Counter from './Componentes/Counter/Counter'
 import ItemListContainer from './Componentes/ItemListContainer/ItemListContainer'
+import ItemDetailContainer from './Componentes/ItemDetailContainer/ItemDetailContainer'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <NavBar/>
       <ItemListContainer />
       <Counter/>
+      <ItemDetailContainer/>
     </div>
   );
 }
