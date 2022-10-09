@@ -12,17 +12,23 @@ const NavBAr = () => {
             <ul className="navbar-nav">
               <li>
                 <Link to = '/'>
-                <h1 id="item" aria-current="page">Inicio</h1>
+                <li id="item">Inicio</li>
                 </Link>
               </li>
               <li >
-                <a id="item">Novedades</a>
+              <Link to = '/category/lampara'>
+                <a id="item">Lamparas</a>
+                </Link>
               </li>
               <li>
-                <a id="item">Catalogo</a>
+              <Link to = '/category/velador'>
+                <a id="item">Veladores</a>
+              </Link>
               </li>
               <li>
-                <a id="item">Contacto</a>
+              <Link to = '/category/reflector'>
+                <a id="item">Reflectores</a>
+                </Link>
               </li>
             </ul>
           </div>

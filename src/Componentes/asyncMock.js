@@ -12,7 +12,7 @@ const products =  [
         id: '2',
         name: 'Berilo', 
         price: 800, 
-        category: 'lampara', 
+        category: 'reflector', 
         img:'/Images/berilo.JPG', 
         stock: 16, 
         description:'Descripcion pendiente - falta completar'
@@ -21,7 +21,7 @@ const products =  [
         id: '3', 
         name: 'Double Sh', 
         price: 1200, 
-        category: 'lampara', 
+        category: 'reflector', 
         img:'/Images/doublesh.JPG', 
         stock: 10, 
         description:'Descripcion pendiente - falta completar'
@@ -30,7 +30,7 @@ const products =  [
         id: '4', 
         name: 'Lampara Hat', 
         price: 1200, 
-        category: 'lampara', 
+        category: 'velador', 
         img:'/Images/hatlamp.JPG', 
         stock: 10, 
         description:'Descripcion pendiente - falta completar'
@@ -39,7 +39,7 @@ const products =  [
         id: '5', 
         name: 'Lampara Tokio', 
         price: 1200, 
-        category: 'lampara', 
+        category: 'velador', 
         img:'/Images/tokio.webp', 
         stock: 10, 
         description:'Descripcion pendiente - falta completar'
@@ -68,5 +68,13 @@ export const getProductById = (id) => {
         setTimeout(() => {
             resolve(products.find (prod => prod.id === id))
         }, 2000)
+    })
+}
+
+export const getProductsByCategory = (categoryId) => {
+    return new Promise (resolve => {
+        setTimeout(() => {
+            resolve(products.filter(prod => prod.category === categoryId))
+        }, 500)
     })
 }

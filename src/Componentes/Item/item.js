@@ -12,11 +12,8 @@ const Item = ({ id, img, name, category, price }) => {
             <div className="detailsCard">
                 <h5>{name}</h5>
             </div>
-            <div className="category">
-                <h3>{category}</h3>
-            </div>
             <div className="price">
-                <h5>{price}</h5>
+                <h5>${price}</h5>
             </div>
             <div className="link">
                 <Link to = {`/detail/${id}`}>Ver detalle</Link>
