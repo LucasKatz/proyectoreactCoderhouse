@@ -1,7 +1,6 @@
-.ListGroup {
+.conteinerLista {
     display: flex;
-    width: 70%;
-    justify-content:center;
+    justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     margin: auto;
