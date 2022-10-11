@@ -16,17 +16,17 @@ const NavBAr = () => {
                 </Link>
               </li>
               <li >
-              <Link to = '/category/lampara'>
+              <Link to = '/category/Lampara'>
                 <a id="item">Lamparas</a>
                 </Link>
               </li>
               <li>
-              <Link to = '/category/velador'>
+              <Link to = '/category/Velador'>
                 <a id="item">Veladores</a>
               </Link>
               </li>
               <li>
-              <Link to = '/category/reflector'>
+              <Link to = '/category/Reflector'>
                 <a id="item">Reflectores</a>
                 </Link>
               </li>
