@@ -3,6 +3,7 @@ import { getProducts, getProductsByCategory } from '../AsyncMock'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
 import '../ItemListContainer/ItemListContainer.css'
+import { ChaoticOrbit } from '@uiball/loaders'
 
 
 const ItemListContainer =({ }) => {
@@ -27,7 +28,9 @@ const ItemListContainer =({ }) => {
 
 
     if(loading) {
-        return <h1>Loading...</h1>
+        return <div className='conteinerLista '>
+        <div className="chaotic-orbit">{ ChaoticOrbit } </div>
+        </div>
     }
 
     return  (
