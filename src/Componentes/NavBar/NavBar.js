@@ -12,7 +12,7 @@ const NavBAr = () => {
             <ul className="navbar-nav">
               <li>
                 <Link to = '/'>
-                <li id="item">Inicio</li>
+                <a id="item">Inicio</a>
                 </Link>
               </li>
               <li >

@@ -5,8 +5,10 @@
     flex-wrap: wrap;
     width: 30%;
     margin: 20px auto;
-    background-color: blue;
-    color: aliceblue;
+    background-color:grey;
+    padding: 15px;
+    box-shadow: 2px 1px 1px #474747b2;
+    border-radius: 5px;
 }
 
 .containerDetail img{
@@ -15,6 +17,6 @@
     flex-direction: column;
     flex-wrap: wrap;
     margin: 20px auto;
-    width: 40%;
-    height: 40%;
+    width: 60%;
+    height: 60%;
 }
