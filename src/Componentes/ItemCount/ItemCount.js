@@ -1,12 +1,11 @@
 import React from "react"
 import {useState} from 'react'
-import '../Counter/Counter.css'
+import './ItemCount.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-let stock = 5 
+const ItemCount  = ({stock =5, initial=0, onAdd}) => {
 
-const Counter = () => {
-
-    const [count, setCount] = useState (0)
+    const [count, setCount] = useState (initial)
 
     const increment = () => {
         if (count < stock) {
@@ -34,13 +33,13 @@ const Counter = () => {
                 <div className="botonFinal">
                     
                 { count > 0 ? 
-                    <button id ="cartButton" className="ui bottom attached button">
-                        
+                    <button id ="cartButton" className="ui bottom attached button" onClick={() => onAdd (count)}>
+                        <FontAwesomeIcon icon="fa-sharp fa-solid fa-cart-shopping" />
                         Agregar al Carrito
                     </button>    
                 : 
-                    <button id ="cartButton" className="ui bottom attached button disabled">
-                        
+                    <button id ="cartButton" className="ui bottom attached button disabled" onClick={() => onAdd (count)}>
+                        <FontAwesomeIcon icon="fa-sharp fa-solid fa-cart-shopping" />
                         Agregar al Carrito
                     </button>
                 } 
@@ -51,4 +50,4 @@ const Counter = () => {
         )
 } 
 
-export default Counter
+export default ItemCount
