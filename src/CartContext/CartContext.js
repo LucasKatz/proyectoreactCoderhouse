@@ -1,8 +1,12 @@
 import { act } from "react-dom/test-utils"
-import  {useState, useContext} from React
+import  {useState, useContext} from 'react'
+import react from 'react'
 
 const CartContext = react.createContext ()
 export  const useCartContext = () =>  useContext (CartContext)
+
+const CartProvider = ({children} ) => {
+	
 const [cart, setCart ] = useState ( [ ] )
 
 const addProduct = (item, newQuantity) => {
@@ -24,7 +28,6 @@ const totalProduct = () => {
 	)}
 
 
-const CartProvider = ({children} ) => {
 return (
 <CartContext.Provider value= {{
 	clearCart, 

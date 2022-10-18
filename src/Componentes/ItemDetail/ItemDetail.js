@@ -14,7 +14,7 @@ const ItemDetail = ({ img, name, category, price, description }) => {
         const onAdd = (count) => {
             console.log ("Compraste", (count), "unidades");
             setGoToCart(true);
-            addProduct (data,quantity);
+            addProduct (name,count);
         }
 
 
