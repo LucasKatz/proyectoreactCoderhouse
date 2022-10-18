@@ -1,16 +1,20 @@
 import'../AsyncMock'
 import '../ItemDetail/ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
+import { useCartContext } from '../../CartContext/CartContext'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const ItemDetail = ({ img, name, category, price, description }) => {
 
         const [goToCart, setGoToCart] = useState (false)
+        const {addProduct} = useCartContext ( );
+
 
         const onAdd = (count) => {
             console.log ("Compraste", (count), "unidades");
             setGoToCart(true);
+            addProduct (data,quantity);
         }
 
 
