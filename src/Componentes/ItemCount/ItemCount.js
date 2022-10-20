@@ -3,21 +3,22 @@ import {useState} from 'react'
 import './ItemCount.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const ItemCount  = ({stock =5, initial=0, onAdd}) => {
+const ItemCount  = ({stock, initial=0, onAdd}) => {
 
-    const [count, setCount] = useState (initial)
+    const [quantity, setQuantity] = useState(initial)
 
     const increment = () => {
-        if (count < stock) {
-        setCount (count +1)
+        if (quantity < stock) {
+            setQuantity(quantity + 1);
         }
-    }
-
+    };
+    
     const decrement = () => {
-        if (count > 0){
-        setCount (count -1)
+        if (quantity > 0) {
+        setQuantity(quantity - 1);
         }
-    }
+    };
+
 
 
     return (
@@ -26,19 +27,19 @@ const ItemCount  = ({stock =5, initial=0, onAdd}) => {
             
                 <div className="contador">
                     <button id="addButton" className="elements" onClick={decrement}> - </button> 
-                    <h2 className="elements">{count}</h2>
+                    <h2 className="elements">{quantity}</h2>
                     <button id="subsButton"  className="elements" onClick={increment}> + </button>
                 </div>
 
                 <div className="botonFinal">
                     
-                { count > 0 ? 
-                    <button id ="cartButton" className="ui bottom attached button" onClick={() => onAdd (count)}>
+                { quantity > 0 ? 
+                    <button id ="cartButton" className="ui bottom attached button" onClick={() => onAdd (quantity)}>
                         <FontAwesomeIcon icon="fa-sharp fa-solid fa-cart-shopping" />
                         Agregar al Carrito
                     </button>    
                 : 
-                    <button id ="cartButton" className="ui bottom attached button disabled" onClick={() => onAdd (count)}>
+                    <button id ="cartButton" className="ui bottom attached button disabled" onClick={() => onAdd (quantity)}>
                         <FontAwesomeIcon icon="fa-sharp fa-solid fa-cart-shopping" />
                         Agregar al Carrito
                     </button>

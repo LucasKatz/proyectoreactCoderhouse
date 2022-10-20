@@ -1,13 +1,22 @@
 import { act } from "react-dom/test-utils"
-import  {useState, useContext} from 'react'
+import  {useState, useEffect, useContext,createContext} from 'react'
 import react from 'react'
 
-const CartContext = react.createContext ()
-export  const useCartContext = () =>  useContext (CartContext)
+export const CartContext = createContext({
+    cart: [],
+    totalQuantity: 0
+})
 
-const CartProvider = ({children} ) => {
-	
-const [cart, setCart ] = useState ( [ ] )
+export const CartProvider = ({children} ) => {
+	const [cart, setCart] = useState([])
+    const [totalProductsAdded, setTotalProductsAdded] = useState(0)
+    const [totalToPay, setTotalToPay] = useState(0)
+
+
+	useEffect(() => {
+		updateTotalProductsAdded()
+		updateTotalToPay()
+	}, [cart])
 
 const addProduct = (item, newQuantity) => {
 const newCart = cart.filter ( prod =>prod.id !== item.id)
@@ -21,11 +30,33 @@ const isInCart = (id) => { return cart.find (product =>product.id ===id) ? true 
 
 const removeProduct = (id) => setCart (cart.filter ( product => product.id !== id))
 
-const totalPrice  = () => { return cart.reduce ((prev,act) => prev + act.quantity * act.price,0);}
+const updateTotalProductsAdded = () => {
+	let count = 0
+	cart.forEach(prod => {
+		count += prod.quantity
+	})
 
-const totalProduct = () => {
-	return cart.reduce ((acumulador,productoActual) => acumulador + productoActual.quantity
-	)}
+	setTotalProductsAdded(count)
+}
+
+const updateTotalToPay = () => {
+	let total = 0
+	cart.forEach(prod => {
+		total += prod.quantity * prod.price
+	})
+	
+	setTotalToPay(total)
+}
+
+const getQuantity = () => {
+	let accu = 0
+
+	cart.forEach(prod => {
+		accu += prod.quantity
+	})
+
+	return accu
+}
 
 
 return (
@@ -34,8 +65,9 @@ return (
 	isInCart, 
 	removeProduct, 
 	addProduct, 
-	totalPrice, 
-	totalProduct,
+	getQuantity,
+	totalProductsAdded,
+	totalToPay,
 	cart 
 	}}>
 		{children}
@@ -43,4 +75,6 @@ return (
 )
 }
 
-export default CartProvider
+export const useCart = () => {
+    return useContext(CartContext)
+}

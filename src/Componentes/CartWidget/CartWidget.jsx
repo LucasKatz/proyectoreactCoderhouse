@@ -1,21 +1,23 @@
+import './CartWidget.css'
 import Carrito from "../Assets/images.png"
-import  "../CartWidget/CartWidget.css"
-import { useCartContext } from "../../CartContext/CartContext";
-import ItemCart from "../ItemCart/ItemCart";
-
+import { useContext } from 'react';
+import { CartContext } from '../../CartContext/CartContext';
 
 const CartWidget = () => {
-  const {cart,totalPrice, totalProducts} = useCartContext ();
-    return (
+  const { totalQuantity } = useContext(CartContext) 
+
+    return(
       <div className="container-widget">
         <div className="widget">
-          <img id="carrito" src={Carrito} alt="" />
-          <span id="contador">{totalProducts}</span>
-          {cart.map(product => <ItemCart key={product.id} product = {product}/>)}
-          <p>Total a Pagar: ${totalPrice}</p>
+        <div to='/cart' className="CartWidget">
+            <img id="carrito" src={Carrito} alt="" />
+        </div>
+        <div className="cart-span">
+          <sup>{totalQuantity}</sup>
+        </div>
         </div>
       </div>
     );
-  }
+}
 
-  export default CartWidget
+export default CartWidget

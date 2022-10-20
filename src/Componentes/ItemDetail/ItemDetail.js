@@ -1,21 +1,27 @@
 import'../AsyncMock'
 import '../ItemDetail/ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
-import { useCartContext } from '../../CartContext/CartContext'
-import { useState } from 'react'
+import { useCart } from '../../CartContext/CartContext'
+import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const ItemDetail = ({ img, name, category, price, description }) => {
+const ItemDetail = ({id, img, name, category, price, description, stock }) => {
 
-        const [goToCart, setGoToCart] = useState (false)
-        const {addProduct} = useCartContext ( );
+    const [goToCart, setGoToCart] = useState (false)
+    const {addProduct} = useCart ( );
 
 
-        const onAdd = (count) => {
-            console.log ("Compraste", (count), "unidades");
-            setGoToCart(true);
-            addProduct (name,count);
+    const onAdd = (quantity) => {
+        const productToAdd = {
+            id,
+            name,
+            category,
+            price,
+            description
         }
+        setGoToCart(true);
+        addProduct (productToAdd, quantity);
+    }
 
 
 
@@ -26,10 +32,10 @@ const ItemDetail = ({ img, name, category, price, description }) => {
             <h3 className="category">{category}</h3>
             <p className="price">${price}</p>
             <p className= "description ">{description}</p>
-            { goToCart
+            {   goToCart 
                 ? <Link to='/cart'>Terminar Compra</Link>
 
-                :<ItemCount onAdd={onAdd}/>
+                :<ItemCount onAdd={onAdd} stock={stock}/>
             } 
         </div>
     )
