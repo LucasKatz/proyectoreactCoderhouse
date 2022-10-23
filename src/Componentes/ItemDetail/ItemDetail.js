@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 const ItemDetail = ({id, img, name, category, price, description, stock }) => {
 
     const [goToCart, setGoToCart] = useState (false)
-    const {addProduct} = useCart ( );
+    const {addProduct, getQuantity, isInCart} = useCart ( );
 
 
     const onAdd = (quantity) => {
@@ -23,7 +23,7 @@ const ItemDetail = ({id, img, name, category, price, description, stock }) => {
         addProduct (productToAdd, quantity);
     }
 
-
+    const quantityAdded = getQuantity(id)
 
     return (
         <div className='containerDetail'>
@@ -35,7 +35,7 @@ const ItemDetail = ({id, img, name, category, price, description, stock }) => {
             {   goToCart 
                 ? <Link to='/cart'>Terminar Compra</Link>
 
-                :<ItemCount onAdd={onAdd} stock={stock}/>
+                :<ItemCount onAdd={onAdd} stock={stock} initial={quantityAdded}/>
             } 
         </div>
     )

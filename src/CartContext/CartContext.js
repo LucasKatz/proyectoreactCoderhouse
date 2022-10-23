@@ -9,20 +9,43 @@ export const CartContext = createContext({
 
 export const CartProvider = ({children} ) => {
 	const [cart, setCart] = useState([])
-    const [totalProductsAdded, setTotalProductsAdded] = useState(0)
-    const [totalToPay, setTotalToPay] = useState(0)
+    const [totalQuantity, setTotalQuantity] = useState(0)
+    const [total, setTotal] = useState(0)
 
+
+
+    useEffect(() => {
+        const totalQty = getQuantity()
+        setTotalQuantity(totalQty)
+    }, [cart])
 
 	useEffect(() => {
-		updateTotalProductsAdded()
-		updateTotalToPay()
-	}, [cart])
+        const total = getTotal()
+        setTotal(total)
+    }, [cart])
 
-const addProduct = (item, newQuantity) => {
-const newCart = cart.filter ( prod =>prod.id !== item.id)
-newCart.push ({... item, quantity: newQuantity})
-setCart (newCart)
-}
+	const addProduct = (productToAdd, quantity) => {
+        if(!isInCart(productToAdd.id)) {
+            productToAdd.quantity = quantity
+            setCart([...cart, productToAdd])
+        } else {
+            const cartUpdated = cart.map(prod => {
+                if(prod.id === productToAdd.id) {
+                    const productUpdated = {
+                        ...prod,
+                        quantity: quantity
+                    }
+
+                    return productUpdated
+                } else {
+                    return prod
+                }
+            })
+
+            setCart(cartUpdated)
+        }
+    }
+
 
 const clearCart = () => setCart ( [ ] )
 
@@ -30,22 +53,15 @@ const isInCart = (id) => { return cart.find (product =>product.id ===id) ? true 
 
 const removeProduct = (id) => setCart (cart.filter ( product => product.id !== id))
 
-const updateTotalProductsAdded = () => {
-	let count = 0
-	cart.forEach(prod => {
-		count += prod.quantity
-	})
 
-	setTotalProductsAdded(count)
-}
 
-const updateTotalToPay = () => {
+const getTotal = () => {
 	let total = 0
 	cart.forEach(prod => {
 		total += prod.quantity * prod.price
 	})
 	
-	setTotalToPay(total)
+	return total 
 }
 
 const getQuantity = () => {
@@ -66,8 +82,8 @@ return (
 	removeProduct, 
 	addProduct, 
 	getQuantity,
-	totalProductsAdded,
-	totalToPay,
+	totalQuantity,
+	total,
 	cart 
 	}}>
 		{children}

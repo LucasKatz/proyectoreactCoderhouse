@@ -3,7 +3,9 @@ import {useState} from 'react'
 import './ItemCount.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const ItemCount  = ({stock, initial=0, onAdd}) => {
+const ItemCount  = ({ initial=1, onAdd}) => {
+
+let stock = 5
 
     const [quantity, setQuantity] = useState(initial)
 

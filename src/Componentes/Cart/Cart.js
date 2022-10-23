@@ -5,7 +5,7 @@ import ItemCart from "../ItemCart/ItemCart";
 import '../AsyncMock'
 
 const Cart = () => {
-    const {cart,totalPrice,totalProducts} = useCart ();
+    const {cart,total,totalQuantity} = useCart ();
 
     console.log (cart);
     if (cart.length === 0)
@@ -18,9 +18,9 @@ const Cart = () => {
 
     return (
         <div>
-            <span id="contador">{totalProducts}</span>
+            <span id="contador">{totalQuantity}</span>
             {cart.map(products => <ItemCart key={products.id} product = {products}/>)}
-            <p>Total a Pagar: ${totalPrice}</p>
+            <p>Total a Pagar: ${total}</p>
         </div>
 
     )
