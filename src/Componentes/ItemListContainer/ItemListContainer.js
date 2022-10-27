@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
-import { getProducts, getProductsByCategory } from '../AsyncMock'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
 import '../ItemListContainer/ItemListContainer.css'
 import { ChaoticOrbit } from '@uiball/loaders'
+import { getDocs, collection, query, where } from 'firebase/firestore'
+import { dataBase } from '../../Service/Firebase'
+
 
 
 const ItemListContainer =({ }) => {
@@ -15,17 +17,27 @@ const ItemListContainer =({ }) => {
     useEffect(() => {
         setLoading(true)
 
-        const asyncFunction = categoryId ? getProductsByCategory : getProducts
-    
-        asyncFunction(categoryId).then(response => {
-            setProducts(response)
-        }).catch(error => {
-            console.log(error)
-        }).finally(() => {
-            setLoading(false)
-        })  
-    }, [categoryId])
+        const collectionRef = categoryId 
+        ? query(collection(dataBase, 'products'), where('category', '==', categoryId))
+        : collection(dataBase, 'products')
 
+    getDocs(collectionRef).then(response => {
+
+        const productsAdapted = response.docs.map(doc => {
+            const data = doc.data()
+
+
+            return { id: doc.id, ...data }
+        })
+
+        setProducts(productsAdapted)
+
+    }).catch(error => {
+        console.log(error)
+    }).finally(() => {
+        setLoading(false)
+    })  
+}, [categoryId])
 
     if(loading) {
         return <div className='conteinerLista '>

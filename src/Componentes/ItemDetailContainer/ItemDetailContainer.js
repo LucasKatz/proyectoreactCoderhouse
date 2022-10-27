@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
-import { getProductById } from '../AsyncMock'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
 import { ChaoticOrbit } from '@uiball/loaders'
+import { getDoc, doc } from 'firebase/firestore'
+import { dataBase } from '../../Service/Firebase'
 
 
 const ItemDetailContainer =() => {
@@ -12,12 +13,18 @@ const ItemDetailContainer =() => {
     
 
     useEffect(() => {
-        getProductById(productId ).then(response => {
-            setProducts(response)
+        const docRef = doc(dataBase, 'products', productId)
+
+        getDoc(docRef).then(response => {
+
+            const data = response.data()
+            const productAdapted = { id: response.id, ...data }
+            setProducts(productAdapted)
         }).finally(() => {
             setLoading(false)
         })
-    }, [])
+    }, [productId])
+
 
     if(loading) {
         return <div className='conteinerLista '>
