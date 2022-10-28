@@ -5,29 +5,8 @@ import ItemCart from "../ItemCart/ItemCart";
 
 
 const Cart = () => {
-    const {cart,total,totalQuantity} = useCart ();
+    const {cart,total,totalQuantity, clearCart} = useCart ();
     
-
-    const pedido = {
-        buyer: {
-            name: 'Lucas Katz',
-            phone: '1122876495',
-            mail: 'l.katz92@gmail.com',
-            address: 'Calle Falsa 123'
-        },
-        items: cart.map(prod => ({name:prod.name, quantity:prod.quantity, price: prod.price })),
-        total: total
-    }
-
-    const handleClick = () => {
-        const dataBase = getFirestore ();
-        const ordersCollection = collection (dataBase, 'Pedidos');
-        addDoc (ordersCollection, pedido)
-        .then (({id}) => console.log (id))
-    }
-
-    const {docs} = pedido
-
 
     if (cart.length === 0)
     return (
@@ -42,7 +21,8 @@ const Cart = () => {
             <span id="contador">{totalQuantity}</span>
             {cart.map(products => <ItemCart key={products.id} product = {products}/>)}
             <p>Total a Pagar: ${total}</p>
-            <button onClick={handleClick}>Generar Pedido</button>
+            <button onClick={() => clearCart()} className="Button">Limpiar carrito</button>
+            <Link to='/checkout' >Checkout</Link>
         </div>
 
     )
