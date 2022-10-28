@@ -8,6 +8,11 @@ const Checkout = () => {
     const [loading, setLoading] = useState(false)
 
     const { cart, total, clearCart } = useContext(CartContext)
+    const [name, setName] = useState("");
+    const [address, setAddress] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+
 
 
     const navigate = useNavigate()
@@ -18,10 +23,10 @@ const Checkout = () => {
         try {
             const objOrder = {
                 buyer: {
-                    name: 'Lucas Katz',
-                    phone: '11 2233 4455',
-                    mail: 'abc.123@gmail.com',
-                    address:'Calle Falsa 123'
+                    name: {name},
+                    address: {address},
+                    phone: {phone},
+                    mail: {email}
                 },
                 items: cart,
                 total: total
@@ -83,8 +88,15 @@ const Checkout = () => {
         return <h1>Se esta procesando su pedido...</h1>
     }
 
-    return (
+    return (    
         <div>
+            <h1>Completa los datos para generar la orden.</h1>
+            <div className='myForm1' >
+                <input  value={name} onChange={(e) => setName(e.target.value)} type="text"   className="form-input"   placeholder="Nombre" />
+                <input value={address}onChange={(e) => setAddress(e.target.value)}type="text"   className="form-input"   placeholder="Dirección" />
+                <input value={email} onChange={(e) => setEmail(e.target.value)} type="email"  className="form-input"   placeholder="Email" />
+                <input value={phone}onChange={(e) => setPhone(e.target.value)} type="number" className="form-input"   placeholder="Teléfono" />
+            </div>
             <h1>Checkout</h1>
             <button onClick={createOrder}>Generar Pedido</button>
         </div>
