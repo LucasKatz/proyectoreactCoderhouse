@@ -16,6 +16,21 @@ const Checkout = () => {
 
 
     const navigate = useNavigate()
+    const [personalData, setPersonalData] = useState (false) 
+
+    const submit = (info) => {
+        if (
+            setName === "" ||
+            setEmail === "" ||
+            setPhone === "" ||
+            setAddress === "" 
+            ) {
+            console.log ("error - complete todos los campos")
+            }
+        
+        else 
+        setPersonalData(true);
+    }
 
     const createOrder = async () => {
         setLoading(true)
@@ -69,7 +84,7 @@ const Checkout = () => {
 
                 setTimeout(() => {
                     navigate('/')
-                }, 3000)
+                }, 2000)
 
                 console.log('success', `El id de su orden es: ${orderAdded.id}`)
             } else {
@@ -98,7 +113,19 @@ const Checkout = () => {
                 <input value={phone}onChange={(e) => setPhone(e.target.value)} type="number" className="form-input"   placeholder="Teléfono" />
             </div>
             <h1>Checkout</h1>
-            <button onClick={createOrder}>Generar Pedido</button>
+
+            {   personalData
+                ?<button onClick={createOrder}>Generar Pedido</button>
+
+
+                :  <div>
+                    <p>Complete sus datos</p>
+                    <button onClick={submit}> Almacenar datos </button>
+                </div>
+
+            
+            } 
+            
         </div>
     )
 }

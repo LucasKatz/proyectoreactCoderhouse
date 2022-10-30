@@ -1,0 +1,12 @@
+Gif del funcionamiento: https://drive.google.com/drive/u/0/folders/1ZZO80DBNJ_FOsFLJilsO7bQCBTWOF3Nh
+
+Deploy en vercel: 
+
+---PASOS DEL COMPILADO---
+1.- git clone https://github.com/LucasKatz/proyectoreactCoderhouse.git
+2.- cd proyectoreactCoderhouse
+3.- npm install | yarn
+4.- npm run dev | yarn dev
+5.- A codear! 
+
+Hecho por Lucas Katz, profesor de inglés y estudiante de la carrera de Desarrollador FullStack el 29 de octubre del 2022

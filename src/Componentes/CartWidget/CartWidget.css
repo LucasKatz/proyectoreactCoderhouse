@@ -1,19 +1,20 @@
-.container-widget {
+.widget{
     display: flex;
     flex-direction: row;
-
+    margin-right: 15px;
+    border: 5px;
+    border-color: red;
+    border-style: solid;
+    border-radius: 20%;
 }
 
 .widget img {
-    width: 60px;
-    height: 60px;
-    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+
 }
 
-#carrito {
-    align-self: flex-end;
-}
 
-#contador {
-    color: aliceblue;
+#number {
+    size: 40px;
 }

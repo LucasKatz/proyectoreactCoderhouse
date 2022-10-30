@@ -2,10 +2,10 @@ import React from "react"
 import {useState} from 'react'
 import './ItemCount.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons"
 
-const ItemCount  = ({ initial=1, onAdd}) => {
+const ItemCount  = ({stock, initial=1, onAdd}) => {
 
-let stock = 5
 
     const [quantity, setQuantity] = useState(initial)
 
@@ -16,7 +16,7 @@ let stock = 5
     };
     
     const decrement = () => {
-        if (quantity > 0) {
+        if (quantity > 1) {
         setQuantity(quantity - 1);
         }
     };
@@ -34,18 +34,10 @@ let stock = 5
                 </div>
 
                 <div className="botonFinal">
-                    
-                { quantity > 0 ? 
                     <button id ="cartButton" className="ui bottom attached button" onClick={() => onAdd (quantity)}>
-                        <FontAwesomeIcon icon="fa-sharp fa-solid fa-cart-shopping" />
+                        <FontAwesomeIcon icon ={faCartShopping} />
                         Agregar al Carrito
-                    </button>    
-                : 
-                    <button id ="cartButton" className="ui bottom attached button disabled" onClick={() => onAdd (quantity)}>
-                        <FontAwesomeIcon icon="fa-sharp fa-solid fa-cart-shopping" />
-                        Agregar al Carrito
-                    </button>
-                } 
+                    </button>  
                 </div>
 
         </div>

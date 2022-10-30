@@ -7,28 +7,28 @@ const NavBAr = () => {
     return (
         <nav className="navbar navbar-expand-lg">
         <div className="navbar container-fluid ">
-          <img src={logo} />
+          <img className='logo' src={logo} />
           <div className="m-auto" id="navbarNav">
             <ul className="navbar-nav">
-              <li>
-                <Link to = '/'>
-                <a id="item">Inicio</a>
+              <li  className='menu' >
+                <Link id="item" to = '/'>
+                <p>Inicio</p>
                 </Link>
               </li>
-              <li >
-              <Link to = '/category/Lampara'>
-                <a id="item">Lamparas</a>
+              <li className='menu'  >
+              <Link id="item" to = '/category/Lampara'>
+                <p>Lamparas</p>
                 </Link>
               </li>
-              <li>
-              <Link to = '/category/Velador'>
-                <a id="item">Veladores</a>
+              <li className='menu' >
+              <Link id="item" to = '/category/Velador'>
+                <p>Veladores</p>
               </Link>
               </li>
-              <li>
-              <Link to = '/category/Reflector'>
-                <a id="item">Reflectores</a>
-                </Link>
+              <li className='menu' >
+              <Link id="item" to = '/category/Reflector'>
+                <p>Reflectores</p>
+              </Link>
               </li>
             </ul>
           </div>
