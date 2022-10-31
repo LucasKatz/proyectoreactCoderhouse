@@ -39,7 +39,7 @@ const ItemDetail = ({id, img, name, category, price, description, stock }) => {
                 </div>
 
 
-                :<ItemCount onAdd={onAdd} stock={stock} initial={quantityAdded}/>
+                : <ItemCount onAdd={onAdd} stock={stock} initial={1}/>
             } 
         </div>
     )

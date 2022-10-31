@@ -1,6 +1,5 @@
-import { act } from "react-dom/test-utils"
 import  {useState, useEffect, useContext,createContext} from 'react'
-import react from 'react'
+
 
 export const CartContext = createContext({
     cart: [],
@@ -25,6 +24,7 @@ export const CartProvider = ({children} ) => {
     }, [cart])
 
 	const addProduct = (productToAdd, quantity) => {
+
         if(!isInCart(productToAdd.id)) {
             productToAdd.quantity = quantity
             setCart([...cart, productToAdd])
@@ -65,7 +65,7 @@ const getTotal = () => {
 }
 
 const getQuantity = () => {
-	let accu = 1
+	let accu = 0
 
 	cart.forEach(prod => {
 		accu += prod.quantity

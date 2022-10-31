@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
 import { ChaoticOrbit } from '@uiball/loaders'
-import { getDoc, doc } from 'firebase/firestore'
-import { dataBase } from '../../Service/Firebase'
+import { getProduct } from '../../Service/Firestore/Productos'
 
 
 const ItemDetailContainer =() => {
@@ -13,14 +12,18 @@ const ItemDetailContainer =() => {
     
 
     useEffect(() => {
-        const docRef = doc(dataBase, 'products', productId)
+        setLoading (true)
 
-        getDoc(docRef).then(response => {
+        getProduct(productId)
+        .then (product =>{
+            setProducts(product)
+        })
 
-            const data = response.data()
-            const productAdapted = { id: response.id, ...data }
-            setProducts(productAdapted)
-        }).finally(() => {
+        .catch(error => {
+            console.log(error)
+        })
+    
+        .finally(() => {
             setLoading(false)
         })
     }, [productId])
@@ -38,5 +41,6 @@ const ItemDetailContainer =() => {
         </div>
     )
 }
+
 
 export default ItemDetailContainer

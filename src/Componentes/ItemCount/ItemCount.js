@@ -4,7 +4,7 @@ import './ItemCount.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons"
 
-const ItemCount  = ({stock = 20, initial=1, onAdd}) => {
+const ItemCount  = ({onAdd, stock, initial=1}) => {
 
 
     const [quantity, setQuantity] = useState(initial)
@@ -33,12 +33,13 @@ const ItemCount  = ({stock = 20, initial=1, onAdd}) => {
                     <button id="subsButton"  className="elements" onClick={increment}> + </button>
                 </div>
 
-                <div className="botonFinal">
+                    <div className="botonFinal">
                     <button id ="cartButton" className="ui bottom attached button" onClick={() => onAdd (quantity)}>
                         <FontAwesomeIcon icon ={faCartShopping} />
                         Agregar al Carrito
                     </button>  
                 </div>
+                
 
         </div>
         

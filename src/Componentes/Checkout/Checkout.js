@@ -3,6 +3,7 @@ import { CartContext } from "../../CartContext/CartContext"
 import { collection, getDocs, query, where, documentId, writeBatch, addDoc } from 'firebase/firestore'
 import { dataBase } from '../../Service/Firebase/index'
 import { useNavigate } from "react-router-dom"
+import Swal from "sweetalert2";
 
 const Checkout = () => {
     const [loading, setLoading] = useState(false)
@@ -22,12 +23,17 @@ const Checkout = () => {
         e.preventDefault ();
         if (!name && !email && !phone && !address)
             {
-            console.log ("error - complete todos los campos")
+                Swal.fire({
+                    title: "Completa tus datos",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+            
+                })
             }
-        
         else 
         setPersonalData(true);
-    }
+        }
 
     const createOrder = async () => {
         setLoading(true)
