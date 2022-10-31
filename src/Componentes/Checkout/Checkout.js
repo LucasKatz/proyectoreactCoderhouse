@@ -18,13 +18,10 @@ const Checkout = () => {
     const navigate = useNavigate()
     const [personalData, setPersonalData] = useState (false) 
 
-    const submit = (info) => {
-        if (
-            setName === "" ||
-            setEmail === "" ||
-            setPhone === "" ||
-            setAddress === "" 
-            ) {
+    const submit = (e) => {
+        e.preventDefault ();
+        if (!name && !email && !phone && !address)
+            {
             console.log ("error - complete todos los campos")
             }
         
