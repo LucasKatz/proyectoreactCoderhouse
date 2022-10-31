@@ -65,7 +65,7 @@ const getTotal = () => {
 }
 
 const getQuantity = () => {
-	let accu = 0
+	let accu = 1
 
 	cart.forEach(prod => {
 		accu += prod.quantity
