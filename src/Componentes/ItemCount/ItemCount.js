@@ -4,7 +4,7 @@ import './ItemCount.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons"
 
-const ItemCount  = ({stock, initial=1, onAdd}) => {
+const ItemCount  = ({stock = 20, initial=1, onAdd}) => {
 
 
     const [quantity, setQuantity] = useState(initial)
