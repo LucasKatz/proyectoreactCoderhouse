@@ -98,7 +98,9 @@ const Checkout = () => {
         <div>
             <h1>Completa los datos para generar la orden.</h1>
             <ClientForm completoDatos={completoDatos}/>
-            { personalData ?<button onClick={createOrder}>Generar Pedido</button> : ""}
+            { personalData 
+            ?<button onClick={createOrder}>Generar Pedido</button> 
+            : ""}
         </div>
     )
 }

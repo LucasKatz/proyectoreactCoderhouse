@@ -61,14 +61,8 @@ const submit = (e) => {
                 <input value={checkEmail} onChange={(e) => setCheckEmail(e.target.value)} type="Confirme Email"  className="form-input"   placeholder="Email" required/>
                 <input value={phone}onChange={(e) => setPhone(e.target.value)} type="number" className="form-input"   placeholder="Teléfono"required />
             </div>
-            
+            <button onClick = {submit}> Submit Data</button>
         
-        
-            <div>
-            <h1>Completa los datos para generar la orden.</h1>
-            <ClientForm completoDatos={completoDatos}/>
-            
-        </div>
             </form>
 )
 }
