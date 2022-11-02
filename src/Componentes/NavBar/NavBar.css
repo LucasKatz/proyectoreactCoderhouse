@@ -9,13 +9,12 @@
   margin:10px;
   border: 5px;
   border-style: solid;
-  border-radius: 20%;
-  background-color: aqua;
+  background-color: black
 
 }
 
 #item {
-  color: black;
+  color: white;
   text-decoration: none;
   justify-content: center;
   text-align: center;

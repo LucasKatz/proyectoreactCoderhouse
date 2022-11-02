@@ -16,9 +16,6 @@ const Checkout = () => {
         setPersonalData(true)
     }
 
-    
-
-
     const { cart, total, clearCart } = useContext(CartContext)
 
     const navigate = useNavigate()
@@ -101,15 +98,7 @@ const Checkout = () => {
         <div>
             <h1>Completa los datos para generar la orden.</h1>
             <ClientForm completoDatos={completoDatos}/>
-            {  personalData
-                ?<button onClick={createOrder}>Generar Pedido</button>
-
-
-                :  <div>
-                    <p>Complete sus datos</p>
-                    <button onClick={submit}> Almacenar datos </button>
-            </div>
-    }
+            { personalData ?<button onClick={createOrder}>Generar Pedido</button> : ""}
         </div>
     )
 }

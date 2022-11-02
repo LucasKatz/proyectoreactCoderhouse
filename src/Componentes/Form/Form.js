@@ -11,15 +11,15 @@ export const FormData = createContext({
 })
 
 
-
 const ClientForm = ({completoDatos}) => {
+    
+    const [name, setName] = useState("");
+    const [surname, setSurname] = useState("");
+    const [address, setAddress] = useState("");
+    const [email, setEmail] = useState("");
+    const [checkEmail, setCheckEmail] = useState("");
+    const [phone, setPhone] = useState("");
 
-const [name, setName] = useState("");
-const [surname, setSurname] = useState("");
-const [address, setAddress] = useState("");
-const [email, setEmail] = useState("");
-const [checkEmail, setCheckEmail] = useState("");
-const [phone, setPhone] = useState("");
 
 
 
@@ -62,7 +62,14 @@ const submit = (e) => {
                 <input value={phone}onChange={(e) => setPhone(e.target.value)} type="number" className="form-input"   placeholder="Teléfono"required />
             </div>
             
-        </form>
+        
+        
+            <div>
+            <h1>Completa los datos para generar la orden.</h1>
+            <ClientForm completoDatos={completoDatos}/>
+            
+        </div>
+            </form>
 )
 }
 
