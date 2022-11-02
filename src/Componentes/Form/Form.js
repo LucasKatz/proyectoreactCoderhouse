@@ -35,7 +35,7 @@ const submit = (e) => {
         
             })
         }
-        if (email != checkEmail && email && checkEmail) {
+        else if (email != checkEmail && email && checkEmail) {
             Swal.fire({
             title: "Los emails no coinciden",
             html: "Por favor, intente nuevamente",
@@ -44,8 +44,9 @@ const submit = (e) => {
         })
     }
 
-    else 
+    else {
     completoDatos()
+    }
     }
 
 
