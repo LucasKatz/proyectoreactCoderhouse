@@ -4,13 +4,22 @@ import { collection, getDocs, query, where, documentId, writeBatch, addDoc } fro
 import { dataBase } from '../../Service/Firebase/index'
 import { useNavigate } from "react-router-dom"
 import { FormData } from "../Form/Form"
-import  Form  from '../Form/Form'
+import  ClientForm  from '../Form/Form'
 
 
 const Checkout = () => {
     const [loading, setLoading] = useState(false)
-    const { cart, total, clearCart } = useContext(CartContext)
+
+    const [personalData, setPersonalData] = useState(false)
+
+    const completoDatos = () =>{
+        setPersonalData(true)
+    }
+
     
+
+
+    const { cart, total, clearCart } = useContext(CartContext)
 
     const navigate = useNavigate()
 
@@ -91,8 +100,16 @@ const Checkout = () => {
     return (    
         <div>
             <h1>Completa los datos para generar la orden.</h1>
-            <Form/>
-            <button onClick={createOrder}>Generar Pedido</button>
+            <ClientForm completoDatos={completoDatos}/>
+            {  personalData
+                ?<button onClick={createOrder}>Generar Pedido</button>
+
+
+                :  <div>
+                    <p>Complete sus datos</p>
+                    <button onClick={submit}> Almacenar datos </button>
+            </div>
+    }
         </div>
     )
 }

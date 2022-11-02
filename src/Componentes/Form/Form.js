@@ -12,7 +12,7 @@ export const FormData = createContext({
 
 
 
-const Form = () => {
+const ClientForm = ({completoDatos}) => {
 
 const [name, setName] = useState("");
 const [surname, setSurname] = useState("");
@@ -21,7 +21,7 @@ const [email, setEmail] = useState("");
 const [checkEmail, setCheckEmail] = useState("");
 const [phone, setPhone] = useState("");
 
-const [personalData, setPersonalData] = useState (false) 
+
 
 const submit = (e) => {
     e.preventDefault ();
@@ -45,22 +45,26 @@ const submit = (e) => {
     }
 
     else 
-    setPersonalData(true);
+    completoDatos()
     }
 
-    <form>
 
-<div className='myForm1' >
-                <input  value={name} onChange={(e) => setName(e.target.value)} type="text"   className="form-input"   placeholder="Nombre" />
-                <input  value={surname} onChange={(e) => setSurname(e.target.value)} type="text"   className="form-input"   placeholder="Apellido" />
-                <input value={address}onChange={(e) => setAddress(e.target.value)}type="text"   className="form-input"   placeholder="Dirección" />
-                <input value={email} onChange={(e) => setEmail(e.target.value)} type="email"  className="form-input"   placeholder="Email" />
-                <input value={checkEmail} onChange={(e) => setCheckEmail(e.target.value)} type="Confirme Email"  className="form-input"   placeholder="Email" />
-                <input value={phone}onChange={(e) => setPhone(e.target.value)} type="number" className="form-input"   placeholder="Teléfono" />
+
+    return (
+        <form>
+
+            <div className='myForm1' >
+                <input  value={name} onChange={(e) => setName(e.target.value)} type="text"   className="form-input"   placeholder="Nombre" required />
+                <input  value={surname} onChange={(e) => setSurname(e.target.value)} type="text"   className="form-input"   placeholder="Apellido" required/>
+                <input value={address}onChange={(e) => setAddress(e.target.value)}type="text"   className="form-input"   placeholder="Dirección"required />
+                <input value={email} onChange={(e) => setEmail(e.target.value)} type="email"  className="form-input"   placeholder="Email" required/>
+                <input value={checkEmail} onChange={(e) => setCheckEmail(e.target.value)} type="Confirme Email"  className="form-input"   placeholder="Email" required/>
+                <input value={phone}onChange={(e) => setPhone(e.target.value)} type="number" className="form-input"   placeholder="Teléfono"required />
             </div>
-            <button onClick= {submit}  > Almacenar datos </button>
-            </form>
+            
+        </form>
+)
 }
 
             
-export default Form
+export default ClientForm
