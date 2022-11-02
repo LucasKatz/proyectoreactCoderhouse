@@ -45,7 +45,13 @@ const submit = (e) => {
     }
 
     else {
-    completoDatos()
+    completoDatos(
+        {name},
+        {surname},
+        {address},
+        {phone},
+        {email}
+    )
     }
     }
 

@@ -11,6 +11,10 @@
     border-radius: 5px;
 }
 
+p{
+    color: black;
+}
+
 .containerDetail img{
     display: flex;
     justify-content: center;

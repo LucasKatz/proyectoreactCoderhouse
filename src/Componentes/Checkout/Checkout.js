@@ -11,33 +11,34 @@ const Checkout = () => {
     const [loading, setLoading] = useState(false)
 
     const [personalData, setPersonalData] = useState(false)
+    
+            const [datosCompra, setDatosCompra] = useState({
+                name: "",
+                surname: "",
+                address: "",
+                phone: "",
+                email: ""}) 
 
-    const completoDatos = () =>{
-        setPersonalData(true)
-    }
+    const completoDatos = (name, surname, address, phone, email) =>{
+            setDatosCompra({name, surname, address, phone, email})
+            setPersonalData(true)
+        }
+    
 
     const { cart, total, clearCart } = useContext(CartContext)
 
     const navigate = useNavigate()
-
-    const {name, surname, address, phone, email} = useContext(FormData)
     
     const createOrder = async () => {
         setLoading(true)
 
         try {
             const objOrder = {
-                buyer: {
-                    name: {name},
-                    surname: {surname},
-                    address: {address},
-                    phone: {phone},
-                    mail: {email}
-                },
+                buyer:datosCompra,
                 items: cart,
                 total: total
             }
-            
+            console.log (objOrder)
             const batch = writeBatch(dataBase)
 
             const outOfStock = []
