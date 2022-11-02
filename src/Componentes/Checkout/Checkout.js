@@ -3,7 +3,6 @@ import { CartContext } from "../../CartContext/CartContext"
 import { collection, getDocs, query, where, documentId, writeBatch, addDoc } from 'firebase/firestore'
 import { dataBase } from '../../Service/Firebase/index'
 import { useNavigate } from "react-router-dom"
-import { FormData } from "../Form/Form"
 import  ClientForm  from '../Form/Form'
 
 
@@ -12,12 +11,7 @@ const Checkout = () => {
 
     const [personalData, setPersonalData] = useState(false)
     
-            const [datosCompra, setDatosCompra] = useState({
-                name: "",
-                surname: "",
-                address: "",
-                phone: "",
-                email: ""}) 
+            const [datosCompra, setDatosCompra] = useState({}) 
 
     const completoDatos = (name, surname, address, phone, email) =>{
             setDatosCompra({name, surname, address, phone, email})

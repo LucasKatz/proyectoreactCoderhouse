@@ -25,7 +25,7 @@ const ClientForm = ({completoDatos}) => {
 
 const submit = (e) => {
     e.preventDefault ();
-    if (!name && !email && !phone && !address)
+    if (!name || !email || !phone || !address)
         {
             Swal.fire({
                 title: "Completa tus datos",
@@ -46,11 +46,11 @@ const submit = (e) => {
 
     else {
     completoDatos(
-        {name},
-        {surname},
-        {address},
-        {phone},
-        {email}
+        name,
+        surname,
+        address,
+        phone,
+        email
     )
     }
     }
