@@ -5,6 +5,7 @@ import { useCart } from '../../CartContext/CartContext'
 import {  useState } from 'react'
 import { Link } from 'react-router-dom'
 
+
 const ItemDetail = ({id, img, name, category, price, description, stock }) => {
 
     const [goToCart, setGoToCart] = useState (false)
