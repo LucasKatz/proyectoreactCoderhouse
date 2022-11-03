@@ -36,6 +36,7 @@ const ItemCount  = ({onAdd, stock, initial=1}) => {
 
                     <div className="botonFinal">
                     <button id ="cartButton" className="ui bottom attached button" onClick={() =>
+                    
                     {onAdd (quantity)
                         Swal.fire({
                             title: "Producto Agregado",
@@ -56,3 +57,6 @@ const ItemCount  = ({onAdd, stock, initial=1}) => {
 } 
 
 export default ItemCount
+
+
+

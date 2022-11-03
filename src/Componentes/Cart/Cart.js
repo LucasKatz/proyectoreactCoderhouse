@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import {useCart} from '../../CartContext/CartContext'
 import ItemCart from "../ItemCart/ItemCart";
 import '../Cart/Cart.css'
+import Swal from "sweetalert2";
 
 
 const Cart = () => {
@@ -11,8 +12,8 @@ const Cart = () => {
     if (cart.length === 0)
     return (
         <div>
-        <p> No hay elementos en el carrito </p>
-        <button> <Link to='/'> Comenzar compra</Link></button>
+        <p className='vacio'> No hay elementos en el carrito </p>
+        <Link className='Button' to='/'> Comenzar compra</Link>
         </div>
     )
 
@@ -20,8 +21,17 @@ const Cart = () => {
         <div>
             {cart.map(products => <ItemCart key={products.id} product = {products}/>)}
             <p>Total a Pagar: ${total}</p>
-            <button onClick={() => clearCart()} className="Button">Limpiar carrito</button>
-            <button><Link className='Button' to='/checkout' >Checkout</Link></button>
+            <button className="Button" onClick={() =>{ clearCart() 
+            Swal.fire({
+                title: "Carrito Vacio",
+                icon: "success",
+                buttons: true,
+                dangerMode: true,
+            
+            })
+            }}
+            >Limpiar carrito</button>
+            <button className='Button'><Link className='innerLink'  to='/checkout' >Checkout</Link></button>
         </div>
 
     )

@@ -1,6 +1,7 @@
 
 import './App.css';
 import NavBar from './Componentes/NavBar/NavBar'
+import Footer from './Footer/Footer';
 import ItemListContainer from './Componentes/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './Componentes/ItemDetailContainer/ItemDetailContainer'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
@@ -25,6 +26,8 @@ function App() {
           < Route path='/checkout' element={<Checkout />}/> 
           < Route path='*' element={<h1>404 NOT FOUND</h1>} />
           </Routes>
+
+          <Footer/>
 
         </CartProvider>
 

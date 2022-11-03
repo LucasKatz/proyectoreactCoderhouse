@@ -1,6 +1,7 @@
 import  {useState, useEffect, useContext,createContext} from 'react'
 
 
+
 export const CartContext = createContext({
     cart: [],
     totalQuantity: 0
@@ -47,7 +48,10 @@ export const CartProvider = ({children} ) => {
     }
 
 
-const clearCart = () => setCart ( [ ] )
+const clearCart = () => setCart ([ ])
+
+
+
 
 const isInCart = (id) => { return cart.find (product =>product.id ===id) ? true : false }
 

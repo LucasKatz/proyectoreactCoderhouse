@@ -24,3 +24,11 @@ p{
     width: 60%;
     height: 60%;
 }
+.botonItd{
+    background-color: black;
+    color: aliceblue;
+    margin: 10px;
+    border: red;
+    border-style: solid;
+    text-decoration: none;
+}

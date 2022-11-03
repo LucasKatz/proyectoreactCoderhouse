@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
+import '../Form/Form.css'
 import { useState, createContext } from "react";
-
 
 export const FormData = createContext({
     name:"",
@@ -45,6 +45,11 @@ const submit = (e) => {
     }
 
     else {
+        Swal.fire({
+            title: "Datos Guardados",
+            icon: "success",
+            buttons: true,
+        })
     completoDatos(
         name,
         surname,
@@ -58,17 +63,22 @@ const submit = (e) => {
 
 
     return (
-        <form>
+        <form className="formulario">
 
-            <div className='myForm1' >
+            <div className="form" >
                 <input  value={name} onChange={(e) => setName(e.target.value)} type="text"   className="form-input"   placeholder="Nombre" required />
                 <input  value={surname} onChange={(e) => setSurname(e.target.value)} type="text"   className="form-input"   placeholder="Apellido" required/>
                 <input value={address}onChange={(e) => setAddress(e.target.value)}type="text"   className="form-input"   placeholder="Dirección"required />
                 <input value={email} onChange={(e) => setEmail(e.target.value)} type="email"  className="form-input"   placeholder="Email" required/>
                 <input value={checkEmail} onChange={(e) => setCheckEmail(e.target.value)} type="Confirme Email"  className="form-input"   placeholder="Email" required/>
                 <input value={phone}onChange={(e) => setPhone(e.target.value)} type="number" className="form-input"   placeholder="Teléfono"required />
-            </div>
+
+
+            <div  className="botones">
             <button onClick = {submit}> Submit Data</button>
+            </div>
+            
+            </div>
         
             </form>
 )

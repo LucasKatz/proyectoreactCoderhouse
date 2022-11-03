@@ -35,8 +35,8 @@ const ItemDetail = ({id, img, name, category, price, description, stock }) => {
             <p className= "description ">{description}</p>
             {   goToCart 
                 ?<div>
-                    <button><Link to='/'>Seguir Comprando</Link></button>
-                    <button><Link to='/cart'>Terminar Compra</Link></button>
+                    <Link className='botonItd' to='/'>Seguir Comprando</Link>
+                    <Link className='botonItd' to='/cart'>Terminar Compra</Link>
                 </div>
 
 

@@ -1,0 +1,17 @@
+.Button {
+background-color: black;
+color: aliceblue;
+margin: 10px;
+border: red;
+border-style: solid;
+text-decoration: none;
+}
+
+.vacio{
+    font-size: xx-large;
+}
+
+.innerLink{
+    text-decoration: none;
+    color: aliceblue;
+}

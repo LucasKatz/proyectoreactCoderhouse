@@ -1,0 +1,41 @@
+
+form{
+    background-color: red;
+    padding: 15px;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    text-align: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    align-items: center;
+    background-image: -webkit-gradient(linear, left top, right top, from(white), to(#b17f48));
+    background-image: linear-gradient(to right, white, #b17f48);
+    padding: 25px;
+    width: 40%;
+    margin: auto;
+}
+
+
+.form input{
+    width: 90%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.form .botones{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+
+}
+
