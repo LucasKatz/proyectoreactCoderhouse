@@ -1,7 +1,7 @@
 
 import './App.css';
 import NavBar from './Componentes/NavBar/NavBar'
-import Footer from './Footer/Footer';
+import Footer from './Componentes/Footer/Footer'
 import ItemListContainer from './Componentes/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './Componentes/ItemDetailContainer/ItemDetailContainer'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
@@ -12,7 +12,7 @@ import Checkout from './Componentes/Checkout/Checkout';
 function App() {
   return (
     <div className="App">
-         
+    
 
       <BrowserRouter>
         <CartProvider> 
@@ -27,11 +27,11 @@ function App() {
           < Route path='*' element={<h1>404 NOT FOUND</h1>} />
           </Routes>
 
-          <Footer/>
+          
+        <Footer/>
 
         </CartProvider>
 
-  
 
       </BrowserRouter>
     </div>

@@ -7,7 +7,7 @@ const NavBAr = () => {
     return (
         <nav className="navbar navbar-expand-lg">
         <div className="navbar container-fluid ">
-          <img className='logo' src={logo} />
+        <Link id="item" to = '/'> <img className='logo'  src={logo} /> </Link>
           <div className="m-auto" id="navbarNav">
             <ul className="navbar-nav">
               <li  className='menu' >
