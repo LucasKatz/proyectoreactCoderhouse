@@ -1,16 +1,13 @@
-/*BARRA DE NAVEGACIÓN*/
+
 .navbar {
-    font-size: larger;
+    font-size: medium;
     display: flex;
     background-color: rgb(50, 50,50);
+    height: 80px;
   }
 
 .menu {
   margin:10px;
-  border: 5px;
-  border-style: solid;
-  background-color: black
-
 }
 
 #item {
@@ -18,6 +15,11 @@
   justify-content: center;
   text-align: center;
   align-items: center;
+}
+
+#p:hover{
+  transform: scale(1.3);
+  box-shadow: 5px 5px 5px 5px white;
 }
 
 #p{
@@ -32,8 +34,10 @@
   align-items: center;
 }
 
-.logo {
+.logo1 {
   margin-left: 15px;
+  height: 60px;
+  width: 60px;
 }
 
   

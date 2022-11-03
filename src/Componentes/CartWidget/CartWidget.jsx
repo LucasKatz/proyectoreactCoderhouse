@@ -10,7 +10,7 @@ const CartWidget = () => {
     return(
         <div className="widget">
           <button className="CartWidget"> 
-            <Link to='/cart'>  <img id="carrito" src={Carrito} alt="" /></Link>
+            <Link className='carrito' to='/cart'>  <img id="carrito" src={Carrito} alt="" /></Link>
             <span className='number' id='number'>{totalQuantity}</span>
           </button>
         </div>

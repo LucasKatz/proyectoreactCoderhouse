@@ -13,7 +13,6 @@ function App() {
   return (
     <div className="App">
     
-
       <BrowserRouter>
         <CartProvider> 
           <NavBar/>
@@ -26,9 +25,8 @@ function App() {
           < Route path='/checkout' element={<Checkout />}/> 
           < Route path='*' element={<h1>404 NOT FOUND</h1>} />
           </Routes>
-
-          
-        <Footer/>
+        
+          <Footer/>
 
         </CartProvider>
 

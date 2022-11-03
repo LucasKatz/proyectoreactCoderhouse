@@ -1,45 +1,42 @@
+
 footer #fondoFooter {
-    font-size: 20px;
-    font-style: normal;
-    background-color: #56381f;
-  }
-  
-  footer #fondoFooter .redes {
-    font-size: larger;
-    font-family: "Pacifico", cursive;
-    color: white;
-  }
-  
-  footer #fondoFooter .Instagram {
-    list-style: none;
-    font-family: "Pacifico", cursive;
-  }
-  
-  footer #fondoFooter .Facebook {
-    list-style: none;
-    margin: 20px 0px 20px 0px;
-    font-family: "Pacifico", cursive;
-  }
-  
-  footer #fondoFooter .fa-facebook, footer #fondoFooter .fa-instagram, footer #fondoFooter .fa-whatsapp {
-    margin-right: 5px;
-  }
-  
-  footer #fondoFooter .n1 {
-    list-style: none;
-    font-family: "Pacifico", cursive;
-    color: white;
-  }
-  
-  footer #fondoFooter .n2 {
-    list-style: none;
-    font-family: "Pacifico", cursive;
-    color: white;
-  }
-  
-  footer .Cen .map {
-    margin-top: 20px;
-    width: 300px;
-    height: 300px;
-  }
-   
+  display: flex;
+  margin-top: 15px;
+  padding: 15px;
+  font-style: normal;
+  background-color:rgb(50, 50,50);
+  color: aliceblue;
+
+}
+
+#footerIzq{
+  display: flex;
+}
+
+
+.logo {
+  height: 180px;
+  width: 180px;
+}
+
+
+.texto{
+  font-size: larger;
+  font-family: "Pacifico", cursive;
+  color: white;
+  font-size: medium;
+  margin-left: 10px;
+}
+
+.textoDerecha {
+  color: white;
+}
+
+
+
+
+footer .Cen .map {
+  margin-top: 20px;
+  width: 300px;
+  height: 300px;
+}

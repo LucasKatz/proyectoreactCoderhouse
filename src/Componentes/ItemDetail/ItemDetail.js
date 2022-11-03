@@ -15,6 +15,7 @@ const ItemDetail = ({id, img, name, category, price, description, stock }) => {
     const onAdd = (quantity) => {
         const productToAdd = {
             id,
+            img,
             name,
             category,
             price,
