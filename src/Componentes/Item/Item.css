@@ -51,7 +51,21 @@
     text-transform: uppercase;
 }
 
-.link{
+.linkContainer{
+   margin-top: 15px;
+}
+
+.price {
+    margin-bottom: 15px;
+}
+
+.linkVerDetalle{
+    background-color: rgb(50, 50,50);
+    color: aliceblue;
+    font-size: large;
+    border: black;
+    border-style: solid;
+    border-radius: 5px;
     text-decoration: none;
-    color: blue;
+    padding: 5px;
 }

@@ -12,10 +12,10 @@ return (
     <div className='containerCart'>
         <h1 className="name">{product.name}</h1>
         <img src={product.img}/>
-        <p className="price">Precio Unitario: ${product.price}</p>
-        <p className="cantidad">Cantidad {product.quantity}</p>
-        <p className="SubTotal">Subtotal: ${product.quantity * product.price}</p>
-        <button onClick={()=>{removeProduct(product.id)
+        <p className="priceCart">Precio Unitario: ${product.price}</p>
+        <p className="cantidadCart">Cantidad {product.quantity}</p>
+        <p className="SubTotalCart">Subtotal: ${product.quantity * product.price}</p>
+        <button className='eliminar' onClick={()=>{removeProduct(product.id)
         Swal.fire({
             title: "Producto Eliminado",
             icon: "warning",

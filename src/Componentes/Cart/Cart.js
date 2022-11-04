@@ -13,15 +13,17 @@ const Cart = () => {
     return (
         <div>
         <p className='vacio'> No hay elementos en el carrito </p>
-        <Link className='Button' to='/'> Comenzar compra</Link>
+        <Link className='comienzo' to='/'> Comenzar compra</Link>
         </div>
     )
 
     return (
         <div>
             {cart.map(products => <ItemCart key={products.id} product = {products}/>)}
-            <p>Total a Pagar: ${total}</p>
-            <button className="Button" onClick={() =>{ clearCart() 
+            <div className='totalAPagar'>
+            <p className='total'>Total a Pagar: ${total}</p>
+            </div>
+            <button className="buttonTotal" onClick={() =>{ clearCart() 
             Swal.fire({
                 title: "Carrito Vacio",
                 icon: "success",
@@ -31,7 +33,7 @@ const Cart = () => {
             })
             }}
             >Limpiar carrito</button>
-            <button className='Button'><Link className='innerLink'  to='/checkout' >Checkout</Link></button>
+            <button className='buttonLimpiar'><Link className='innerLink'  to='/checkout' >Checkout</Link></button>
         </div>
 
     )

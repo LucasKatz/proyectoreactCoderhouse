@@ -15,8 +15,8 @@ const Item = ({ id, img, name, price }) => {
             <div className="price">
                 <h5>${price}</h5>
             </div>
-            <div className="link">
-                <button><Link className="link" to = {`/detail/${id}`}>Ver detalle</Link></button>
+            <div className="linkContainer">
+                <Link className="linkVerDetalle" to = {`/detail/${id}`}>Ver detalle</Link>
             </div>
         </div>
     

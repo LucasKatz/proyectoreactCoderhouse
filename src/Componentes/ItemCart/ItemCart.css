@@ -16,7 +16,30 @@
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
-    margin: 20px auto;
-    width: 60%;
-    height: 60%;
+    margin: 15px auto;
+    width: 70%;
+    height: 70%;
+    border-radius: 5px;
+}
+
+.eliminar{
+    background-color: rgb(50, 50,50);
+    color: aliceblue;
+    font-size: larger;
+    border: black;
+    border-style: solid;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.priceCart{
+    font-weight: bolder;
+}
+
+.cantidadCart{
+    font-weight: bolder;
+}
+.SubTotalCart{
+    font-weight: bolder;
 }

@@ -23,12 +23,24 @@ p{
     margin: 20px auto;
     width: 60%;
     height: 60%;
+    border-radius: 5px;
 }
 .botonItd{
-    background-color: black;
+    background-color: rgb(50, 50,50);
     color: aliceblue;
-    margin: 10px;
-    border: red;
+    font-size: large;
+    border: black;
     border-style: solid;
+    border-radius: 5px;
     text-decoration: none;
+    padding: 5px;
+    margin:5px;
+}
+
+.price{
+font-size: large;
+}
+
+.description{
+    font-size: large;
 }

@@ -1,17 +1,54 @@
-.Button {
-background-color: black;
-color: aliceblue;
-margin: 10px;
-border: red;
-border-style: solid;
-text-decoration: none;
+.buttonTotal {
+    background-color: rgb(50, 50,50);
+    color: aliceblue;
+    font-size: large;
+    border: black;
+    border-style: solid;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 5px;
+    margin:10px
+}
+
+.buttonLimpiar{
+    background-color: rgb(50, 50,50);
+    color: aliceblue;
+    font-size: large;
+    border: black;
+    border-style: solid;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 5px;
 }
 
 .vacio{
-    font-size: xx-large;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.comienzo{
+    background-color: rgb(50, 50,50);
+    color: aliceblue;
+    font-size: large;
+    border: black;
+    border-style: solid;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 5px;
 }
 
 .innerLink{
     text-decoration: none;
     color: aliceblue;
+}
+
+.totalAPagar{
+    background-color:rgb(50, 50,50); 
+    width: 40%;
+    text-align: center;
+}
+
+.total{
+    color: aliceblue;
+    align-items: center;
 }

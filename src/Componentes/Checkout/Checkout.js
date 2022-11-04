@@ -4,6 +4,7 @@ import { collection, getDocs, query, where, documentId, writeBatch, addDoc } fro
 import { dataBase } from '../../Service/Firebase/index'
 import { useNavigate } from "react-router-dom"
 import  ClientForm  from '../Form/Form'
+import'../Checkout/Checkout.css'
 
 
 const Checkout = () => {
@@ -91,7 +92,7 @@ const Checkout = () => {
 
     return (    
         <div>
-            <h1>Completa los datos para generar la orden.</h1>
+            <h1 className="datosCliente">Completa los datos para generar la orden.</h1>
             <ClientForm completoDatos={completoDatos}/>
             { personalData 
             ?<button onClick={createOrder}>Generar Pedido</button> 
