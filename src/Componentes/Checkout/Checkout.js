@@ -1,6 +1,6 @@
 import { useState, useContext } from "react"
 import { CartContext } from "../../CartContext/CartContext"
-import { collection, getDocs, query, where, documentId, writeBatch, addDoc } from 'firebase/firestore'
+import { collection, getDocs, query, where, documentId, writeBatch, addDoc, Timestamp } from 'firebase/firestore'
 import { dataBase } from '../../Service/Firebase/index'
 import { useNavigate } from "react-router-dom"
 import  ClientForm  from '../Form/Form'
@@ -33,9 +33,9 @@ const Checkout = () => {
             const objOrder = {
                 buyer:datosCompra,
                 items: cart,
-                total: total
+                total: total,
+                date: Timestamp.fromDate(new Date())
             }
-            console.log (objOrder)
             const batch = writeBatch(dataBase)
 
             const outOfStock = []
