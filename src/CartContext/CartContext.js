@@ -72,12 +72,11 @@ const getQuantity = (id) => {
     let initial= 0
     const itemInCart = cart.find((item)=> item.id === id)
     if(itemInCart){
-    return item.quantity
+    return item.quantity  
     }else{
     return initial
     }
 }
-
 
 return (
 <CartContext.Provider value= {{
@@ -86,6 +85,7 @@ return (
 	removeProduct, 
 	addProduct, 
 	getQuantity,
+    getTotal,
 	totalQuantity,
 	total,
 	cart 
