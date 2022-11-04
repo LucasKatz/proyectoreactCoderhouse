@@ -19,10 +19,14 @@ const Cart = () => {
 
     return (
         <div>
+            <div className='productsContainer'>
             {cart.map(products => <ItemCart key={products.id} product = {products}/>)}
-            <div className='totalAPagar'>
-            <p className='total'>Total a Pagar: ${total}</p>
             </div>
+            <div className='totalPagarContainer'>
+                <div className='totalAPagar'>
+                    <p className='total'>Total a Pagar: ${total}</p>
+                </div>
+            </div>    
             <button className="buttonTotal" onClick={() =>{ clearCart() 
             Swal.fire({
                 title: "Carrito Vacio",
@@ -34,6 +38,7 @@ const Cart = () => {
             }}
             >Limpiar carrito</button>
             <button className='buttonLimpiar'><Link className='innerLink'  to='/checkout' >Checkout</Link></button>
+        
         </div>
 
     )
