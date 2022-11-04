@@ -34,15 +34,14 @@ const ItemDetail = ({id, img, name, category, price, description, stock }) => {
             <h3 className="category">{category}</h3>
             <p className="price">Precio ${price}</p>
             <p className= "description ">{description}</p>
-            {   goToCart 
-                ?<div>
-                    <Link className='botonItd' to='/'>Seguir Comprando</Link>
-                    <Link className='botonItd' to='/cart'>Terminar Compra</Link>
-                </div>
-
-
-                : <ItemCount onAdd={onAdd} stock={stock} initial={1}/>
-            } 
+            { stock!==0 ? <ItemCount onAdd={onAdd} stock={stock} initial={quantityAdded} /> : <h2>Sin Stock</h2> }
+        { !goToCart ? true :
+        <div className="buttons-detail">
+        <Link to='/cart' className="botonItd">Ir al carrito</Link>
+        <Link to='/' className="botonItd">Seguir comprando</Link> 
+        </div> }
+        { goToCart ? true
+        : <Link to='/' className="botonItd">Volver al listado</Link> }
         </div>
     )
 }
