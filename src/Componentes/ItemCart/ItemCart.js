@@ -10,21 +10,19 @@ const ItemCart = ({product}) => {
 
 return (    
     <div className='containerCart'>
-        <div>
+        <div className='containerImage'>
         <h1 className="name">{product.name}</h1>
         </div>
-        <div>
+
+        <div className='containerData'>
             <img src={product.img}/>
-        </div>
-        <div>
+
             <p className="priceCart">Precio Unitario: ${product.price}</p>
-        </div>
-        <div>
+
             <p className="cantidadCart">Cantidad {product.quantity}</p>
-        </div>
-        <div>
+
             <p className="SubTotalCart">Subtotal: ${product.quantity * product.price}</p>
-        </div>
+
         <div>
             <button className='eliminar' onClick={()=>{removeProduct(product.id)
 
@@ -34,6 +32,7 @@ return (
                 buttons: true,
             })
             }}> Eliminar</button>
+        </div>
         </div>
     </div>
 )
