@@ -14,6 +14,14 @@ const ItemCount  = ({onAdd, stock, initial=1}) => {
         if (quantity < stock) {
             setQuantity(quantity + 1);
         }
+        else {
+            Swal.fire({
+                title: "No hay mas stock",
+                icon: "success",
+                buttons: true,
+        
+            })
+    }
     };
     
     const decrement = () => {
