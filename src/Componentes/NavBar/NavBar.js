@@ -17,7 +17,7 @@ const NavBAr = () => {
               </li>
               <li className='menu'  >
               <Link id="item" to = '/category/Lampara'>
-                <p id="p">LAMPARAS</p>
+                <p id="p">LÁMPARAS</p>
                 </Link>
               </li>
               <li className='menu' >

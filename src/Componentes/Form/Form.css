@@ -1,7 +1,7 @@
 
 form{
-    background-color: red;
     padding: 15px;
+    
 }
 
 
@@ -16,11 +16,10 @@ form{
     -ms-flex-pack: center;
     justify-content: center;
     align-items: center;
-    background-image: -webkit-gradient(linear, left top, right top, from(white), to(#b17f48));
-    background-image: linear-gradient(to right, white, #b17f48);
     padding: 25px;
     width: 40%;
     margin: auto;
+    background-color: #78cad2;
 }
 
 
@@ -31,11 +30,15 @@ form{
     justify-content: center;
 }
 
-.form .botones{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 90%;
+.botonSubmit{
+    background-color: rgb(50, 50,50);
+    color: aliceblue;
+    font-size: larger;
+    border: black;
+    border-style: solid;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 5px;
 
 }
 

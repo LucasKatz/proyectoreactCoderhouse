@@ -74,8 +74,8 @@ const submit = (e) => {
                 <input value={phone}onChange={(e) => setPhone(e.target.value)} type="number" className="form-input"   placeholder="Teléfono"required />
 
 
-            <div  className="botones">
-            <button onClick = {submit}> Submit Data</button>
+            <div >
+            <button  className="botonSubmit" onClick = {submit}> Submit Data</button>
             </div>
             
             </div>

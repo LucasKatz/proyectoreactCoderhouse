@@ -12,7 +12,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color:grey;
+    background-color: #78cad2;
     padding: 15px;
     margin: 5px;
     box-shadow: 2px 1px 1px #474747b2;
@@ -60,7 +60,7 @@
 }
 
 .linkVerDetalle{
-    background-color: rgb(50, 50,50);
+    background-color: #323232;
     color: aliceblue;
     font-size: large;
     border: black;

@@ -4,6 +4,8 @@ import { collection, getDocs, query, where, documentId, writeBatch, addDoc } fro
 import { dataBase } from '../../Service/Firebase/index'
 import { useNavigate } from "react-router-dom"
 import  ClientForm  from '../Form/Form'
+import { ChaoticOrbit } from '@uiball/loaders'
+import Swal from "sweetalert2";
 import'../Checkout/Checkout.css'
 
 
@@ -72,10 +74,22 @@ const Checkout = () => {
                 setTimeout(() => {
                     navigate('/')
                 }, 2000)
-
-                console.log('success', `El id de su orden es: ${orderAdded.id}`)
+                Swal.fire({
+                    title: "Gracias por su compra",
+                    text:`El id de su orden es: ${orderAdded.id}`,
+                    icon: "success",
+                    buttons: true,
+                    dangerMode: true,
+                
+                })
             } else {
-                console.log('error','hay productos que estan fuera de stock')
+                Swal.fire({
+                    title: "Algunos productos no se encuentran en stock",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                
+                })
             }
 
         } catch (error) {
@@ -87,7 +101,11 @@ const Checkout = () => {
     }
 
     if(loading) {
-        return <h1>Se esta procesando su pedido...</h1>
+        return <div className="conteinerCheckout">
+            <h1>Se esta procesando su pedido...</h1>
+            <br></br>
+            <div className="chaotic-orbit">{ ChaoticOrbit } </div>
+        </div>
     }
 
     return (    
@@ -95,7 +113,7 @@ const Checkout = () => {
             <h1 className="datosCliente">Completa los datos para generar la orden.</h1>
             <ClientForm completoDatos={completoDatos}/>
             { personalData 
-            ?<button onClick={createOrder}>Generar Pedido</button> 
+            ?<button className="botonCheckout" onClick={createOrder}>Generar Pedido</button> 
             : ""}
         </div>
     )
