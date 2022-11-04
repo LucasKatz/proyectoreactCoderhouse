@@ -1,12 +1,17 @@
-Gif del funcionamiento: https://drive.google.com/drive/u/0/folders/1ZZO80DBNJ_FOsFLJilsO7bQCBTWOF3Nh
+# Lucas Ariel Katz 
+## _Proyecto E-Commerce - Imagen Iluminación
+This website is powered by React, HTML5, Firebase and Bootstrap 
 
-Deploy en vercel: https://proyectoreactcoderhouse.vercel.app/
-
----PASOS DEL COMPILADO---
-1.- git clone https://github.com/LucasKatz/proyectoreactCoderhouse.git
+## Installation
+Install the dependencies and devDependencies and start the server.
+---Follow the instructions--- 
+1.- git clone https://github.com/LucasKatz/proyectoreactCoderhouse.git 
 2.- cd proyectoreactCoderhouse
-3.- npm install | yarn
-4.- npm run dev | yarn dev
-5.- A codear! 
+3.- npm install | yarn 
+4.- npm run dev | yarn dev 
+5.- A codear!
 
-Hecho por Lucas Katz, profesor de inglés y estudiante de la carrera de Desarrollador FullStack el 29 de octubre del 2022
+## Deployment Link
+ https://proyectoreactcoderhouse.vercel.app/
+ 
+ Developed by Lucas Katz, English teacher and Full Stack Web Developer student on October 29th, 2022 
