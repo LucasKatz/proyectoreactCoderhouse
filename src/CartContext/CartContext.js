@@ -34,7 +34,7 @@ export const CartProvider = ({children} ) => {
                 if(prod.id === productToAdd.id) {
                     const productUpdated = {
                         ...prod,
-                        quantity: quantity
+                        quantity: prod.quantity + productToAdd.quantity
                     }
 
                     return productUpdated
@@ -68,14 +68,14 @@ const getTotal = () => {
 	return total 
 }
 
-const getQuantity = () => {
-	let accu = 0
-
-	cart.forEach(prod => {
-		accu += prod.quantity
-	})
-
-	return accu
+const getQuantity = (id) => {
+    let initial= 0
+    const itemInCart = cart.find((item)=> item.id === id)
+    if(itemInCart){
+    return item.quantity
+    }else{
+    return initial
+    }
 }
 
 
