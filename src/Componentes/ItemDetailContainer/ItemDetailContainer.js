@@ -1,38 +1,28 @@
-import { useState, useEffect } from 'react'
+
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
 import { ChaoticOrbit } from '@uiball/loaders'
 import { getProduct } from '../../Service/Firestore/Productos'
+import { useAsync } from "../../Hooks/useAsync";
 
 
 const ItemDetailContainer =() => {
-    const [products, setProducts] = useState([])
-    const [loading, setLoading] = useState(true)
-    const { productId } = useParams()
+
+        const {productId} = useParams()
     
-
-    useEffect(() => {
-        setLoading (true)
-
-        getProduct(productId)
-        .then (product =>{
-            setProducts(product)
-        })
-
-        .catch(error => {
-            console.log(error)
-        })
+        const getProductsFromFirestore = () => getProduct(productId)
     
-        .finally(() => {
-            setLoading(false)
-        })
-    }, [productId])
-
+        const { data: products, error, loading } = useAsync(getProductsFromFirestore, [productId])
+    
 
     if(loading) {
         return <div className='conteinerLista '>
         <div className="chaotic-orbit">{ ChaoticOrbit } </div>
         </div>
+    }
+
+    if(error) {
+        return  <h1>Oops! Ha habido un error</h1>
     }
 
     return  (

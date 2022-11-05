@@ -27,18 +27,7 @@ const Checkout = () => {
     const navigate = useNavigate()
     
     const createOrder = async () => {
-        setLoading(true)
-    
-        if (cart = [])
-        {
-            Swal.fire({
-                title: "Agrega productos al carrito!",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-        
-            })
-        }    
+        setLoading(true)  
 
         try {
             const objOrder = {
