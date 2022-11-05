@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 const ItemDetail = ({id, img, name, category, price, description, stock }) => {
 
     const [goToCart, setGoToCart] = useState (false)
-    const {addProduct, getQuantity} = useCart ( );
+    const {addProduct, getProductQuantity} = useCart ( );
 
 
 
@@ -26,7 +26,7 @@ const ItemDetail = ({id, img, name, category, price, description, stock }) => {
         addProduct (productToAdd, quantity);
     }
 
-    const quantityAdded = getQuantity(id)
+    const quantityAdded = getProductQuantity (id)
 
 
     return (
