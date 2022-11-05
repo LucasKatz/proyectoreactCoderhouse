@@ -34,7 +34,7 @@ export const CartProvider = ({children} ) => {
                 if(prod.id === productToAdd.id) {
                     const productUpdated = {
                         ...prod,
-                        quantity: quantity 
+                        quantity: quantity + prod.quantity
                     
                     }
 
@@ -53,10 +53,7 @@ const clearCart = () => setCart ([ ])
 
 
 
-
-const isInCart = (id) => {
-    return cart.some(prod => prod.id === id)
-}
+const isInCart = (id) => { return cart.find (product =>product.id ===id) }
 
 const removeProduct = (id) => setCart (cart.filter ( product => product.id !== id))
 
