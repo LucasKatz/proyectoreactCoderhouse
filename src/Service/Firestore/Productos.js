@@ -1,7 +1,9 @@
-import { getDocs, collection, query, where } from 'firebase/firestore'
+import { getDocs, collection, query, where, orderBy } from 'firebase/firestore'
 import {getDoc, doc} from 'firebase/firestore'
 import { dataBase } from '../../Service/Firebase'
 import { createAdaptedProductFromFirestore } from '../../Adapter/adaptedproduct'
+import { createAdaptedCategoryFromFirestore } from '../../Adapter/adaptedCategory'
+
 
 
 
@@ -41,5 +43,23 @@ import { createAdaptedProductFromFirestore } from '../../Adapter/adaptedproduct'
                     reject(error)
                 })
 
+        })
+    }
+
+    export const getProductByCategory=()=>{
+
+        return new Promise((resolve, reject) => {
+        
+            const collectionRef = query (collection(dataBase, 'categories'), orderBy("order"));
+    
+            getDocs(collectionRef).then(response =>{
+                const categoriesAdapted = response.docs.map(doc => {
+                    return createAdaptedCategoryFromFirestore(doc)
+                })
+                resolve(categoriesAdapted)
+                })
+                .catch(error => {
+                    reject(error)
+                })
         })
     }
